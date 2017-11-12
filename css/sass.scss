@@ -1,0 +1,174 @@
+
+$teal-dark : rgba(49,132,154, 1);
+$purple-dark: #C456A0;
+$blue-light:rgb(160, 212, 225);
+// $background: #f9f9f9;
+$background:rgb(248,248,248);
+$body-font: 'Ubuntu', 'Fira Sans';
+$care-plan-border: 1px solid rgba(0,0,0,.1);
+$font-size: 15px;
+$header-size: 18px;
+$med-font: 16.5px;
+
+
+html {
+    font-family: $body-font, sans-serif;
+    font-size: $font-size;
+}
+
+.hideme {
+  display:none;
+}
+
+
+
+.command.row {
+  position: absolute;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  top: 50vh;
+  text-align: center;
+  transition: opacity .15s ease-in-out, letter-spacing .15s ease-in-out;
+  cursor: pointer;
+}
+
+// .command.row:hover {
+//   opacity: .8;
+//   letter-spacing: .7px;
+// }
+
+.top.row {
+  width: 100%;
+  height: 40vh;
+}
+
+
+.row {
+  transition: opacity .15s ease-in-out, letter-spacing .15s ease-in-out;
+}
+// .row:hover {
+//   opacity: .5;
+//   letter-spacing: .4px;
+// }
+
+
+
+.exchange-icon {
+  font-size: 44px;
+  transform: translateX(-7px) translateY(-15px);
+}
+.explore-icon {
+  font-size: 30px;
+  transform: translateX(-18px) translateY(-15px);
+}
+
+.middle.row.secondary {
+  display:none;
+
+  div {
+    width: 50%;
+    text-align: center;
+    float: left;
+  }
+}
+
+
+
+.state {
+  display: none;
+}
+.state.home {
+  display: block;
+}
+
+#player {
+  background: white;
+  width: 50px;
+  height: 50px;
+}
+
+.row {
+  position: relative;
+  cursor: pointer;
+}
+.centered {
+  text-align: center;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  transition: opacity .15s ease-in-out, letter-spacing .15s ease-in-out;
+}
+
+.clickable:hover {
+  opacity: .4;
+  // letter-spacing: .4px;
+}
+
+.cancel-btn {
+  width: 50%;
+  float: left;
+  opacity: .2;
+}
+.restart-btn {
+  width: 50%;
+  float: left;
+  opacity: .7;
+}
+
+.material-icons {
+  margin-right: 7px;
+}
+
+.recording-text {
+  height: auto;
+  position: relative;
+  transform: translateY(50%)
+}
+
+.recording-timer {
+  opacity: .3;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.middle-icon {
+  font-size: 28px;
+transform: Translate(-5px, 5px);
+}
+
+
+.middle.row {
+  width: 100%;
+  height: 20vh;
+  position: relative;
+}
+
+.bottom.row {
+  width: 100%;
+  height: 40vh;
+}
+
+
+
+body {
+  background: rgba(0,0,0,.95);
+  font-family: 'Nunito Sans';
+  position: relative;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: .3px;
+  overflow-y:hidden;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 100%;
+}
+
+//@import 'goalsass';

@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- PAGE TITLE -->
+    <title>Arcadia Analytics</title>
+    <!-- CSS  -->
+    <!-- Libraries -->
+    <!-- <link href="css/lib/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+    <link rel="stylesheet" href="./Arcadia Analytics_files/materialize.min.css">
+
+    <link href="./Arcadia Analytics_files/nv.d3.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+<!--
+<link href="//cdn.quilljs.com/1.1.7/quill.snow.css" rel="stylesheet"> -->
+    <!-- Fonts -->
+    <link href="./Arcadia Analytics_files/css" rel="stylesheet">
+    <link href="./Arcadia Analytics_files/icon" rel="stylesheet">
+    <link href="./Arcadia Analytics_files/css(1)" rel="stylesheet">
+    <link href="./Arcadia Analytics_files/jquery.splitter.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_style.min.css' rel='stylesheet' type='text/css' /> -->
+
+    <!-- Your CSS Here -->
+    <link href="./Arcadia Analytics_files/quill.snow.css" rel="stylesheet">
+    <link href="./Arcadia Analytics_files/quill.bubble.css" rel="stylesheet">
+    <link href="./Arcadia Analytics_files/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+   <link href="./Arcadia Analytics_files/sass.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+</head>
+
+<body>
+<div id="tooltip" class="tooltip"></div>
+<div class="header-bar"></div>
+
+<!-- MAIN PAGE -->
+<div class="main main-0 hidden" id="cm-registry">
+    <img src="./Arcadia Analytics_files/cm-registry.png" style="width:100%">
+</div>
+
+<div class="main card fullscreen main-1" id="pat-assignment">
+<div class="row card-header primary patient-summary" id="headerbar">
+    <div class="col s6 patient-name">
+
+    <div class="arrow-holder">
+      <svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+          <path d="M0-.5h24v24H0z" fill="none"></path>
+      </svg>
+      <svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+          <path d="M0-.25h24v24H0z" fill="none"></path>
+      </svg>
+
+    </div>
+    <span class="list-nav modal-trigger" data-target="list-preview-modal">Eligible Patient List (1 / 57) </span>- SINGH, ALEXANDER (60, M)
+    </div>
+
+    <div id="list-preview-modal" class="modal">
+      <div class="modal-content">
+      <h5 style="color: gray">PATIENT LIST SNAPSHOT</h5>
+      <h7><i>57 Patients in List - Eligible Patient List</i></h7><br>
+      <h7><i>56 Not Viewed</i></h7><br>
+      <h7><i>56 Require Action</i></h7>
+        <table style="color:black; margin-top: 10px">
+          <thead>
+            <tr>
+                <th data-field="Name">Name</th>
+                <th data-field="Viewed">Viewed</th>
+                <th data-field="Action Taken">Action Taken</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr style="background-color: rgba(255,192,203, .3); color: darkslategray; border: 1px solid rgba(0,0,0,.1)">
+              <td>Singh, Alexander</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>James, Nick</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Omar, Omar</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Muhammad, Ingrid</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Evans, Diana</td>
+              <td>Y</td>
+              <td>N</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+    <!-- <div class="patient-list-mouseover">
+      <br>
+      1) Smith, John <br>
+      2) Mutombo, Dikembe <br>
+      3) Michaelson, Ahmed <br>
+
+    </div> -->
+  <div class="icon-holder-toolbar">
+
+    <i class="material-icons toolbar-icon-right right-align">clear</i>
+     <i class="material-icons  toolbar-icon-right  right-align">notifications_none</i>
+     <i class="material-icons toolbar-icon-right right-align">schedule</i>
+  </div>
+
+<!--    <div class="col s6 right-align"><a href="#!">Close (X)</a></div>-->
+</div>
+<div class="row card-body spr splitter_panel" style="width: 100%; height: 100%;">
+<div class="spr-sections left_panel" style="width: 137.5px;">
+   <div class="row spr-icons">
+     <i class="spricon material-icons spr selected" hidediv="#calendar-wrapper" showdiv="#spr-wrapper">face</i>
+     <i class="spricon material-icons cal" hidediv="#spr-wrapper" showdiv="#calendar-wrapper">date_range</i>
+     <i class="spricon material-icons menu-button">menu</i>
+   </div>
+    <div id="calendar-wrapper" class="hidden">
+      <div id="calendar"><div class="clndr"><div class="clndr-controls"><div class="clndr-control-button"><i class="material-icons">navigate_before</i></div><div class="month">January 2017</div><div class="clndr-control-button rightalign"><i class="material-icons">navigate_next</i></div></div><table class="clndr-table" border="0" cellspacing="0" cellpadding="0"><thead><tr class="header-days"><td class="header-day">S</td><td class="header-day">M</td><td class="header-day">T</td><td class="header-day">W</td><td class="header-day">T</td><td class="header-day">F</td><td class="header-day">S</td></tr></thead><tbody><tr><td class="day past calendar-day-2017-01-01 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">1</div></td><td class="day past calendar-day-2017-01-02 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">2</div></td><td class="day today calendar-day-2017-01-03 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">3</div></td><td class="day calendar-day-2017-01-04 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">4</div></td><td class="day calendar-day-2017-01-05 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">5</div></td><td class="day calendar-day-2017-01-06 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0); border-bottom: 1.3px solid red;"><div class="day-contents">6</div></td><td class="day calendar-day-2017-01-07 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">7</div></td></tr><tr><td class="day calendar-day-2017-01-08 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0.0980392);"><div class="day-contents">8</div></td><td class="day calendar-day-2017-01-09 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">9</div></td><td class="day calendar-day-2017-01-10 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0); border-bottom: 1.3px solid red;"><div class="day-contents">10</div></td><td class="day calendar-day-2017-01-11 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">11</div></td><td class="day calendar-day-2017-01-12 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">12</div></td><td class="day calendar-day-2017-01-13 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">13</div></td><td class="day calendar-day-2017-01-14 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0); border-bottom: 1.3px solid red; font-weight: 900; font-size: 16px;"><div class="day-contents">14</div></td></tr><tr><td class="day calendar-day-2017-01-15 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0.0784314);"><div class="day-contents">15</div></td><td class="day calendar-day-2017-01-16 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">16</div></td><td class="day calendar-day-2017-01-17 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">17</div></td><td class="day calendar-day-2017-01-18 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0); border-bottom: 1.3px solid red;"><div class="day-contents">18</div></td><td class="day calendar-day-2017-01-19 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0.0470588);"><div class="day-contents">19</div></td><td class="day calendar-day-2017-01-20 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0.027451);"><div class="day-contents">20</div></td><td class="day calendar-day-2017-01-21 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0.0980392);"><div class="day-contents">21</div></td></tr><tr><td class="day calendar-day-2017-01-22 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">22</div></td><td class="day calendar-day-2017-01-23 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0.0980392);"><div class="day-contents">23</div></td><td class="day calendar-day-2017-01-24 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0.0470588);"><div class="day-contents">24</div></td><td class="day calendar-day-2017-01-25 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">25</div></td><td class="day calendar-day-2017-01-26 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0.0470588);"><div class="day-contents">26</div></td><td class="day calendar-day-2017-01-27 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">27</div></td><td class="day calendar-day-2017-01-28 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0.2);"><div class="day-contents">28</div></td></tr><tr><td class="day calendar-day-2017-01-29 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">29</div></td><td class="day calendar-day-2017-01-30 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">30</div></td><td class="day calendar-day-2017-01-31 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">31</div></td><td class="day adjacent-month next-month calendar-day-2017-02-01 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">1</div></td><td class="day adjacent-month next-month calendar-day-2017-02-02 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">2</div></td><td class="day adjacent-month next-month calendar-day-2017-02-03 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">3</div></td><td class="day adjacent-month next-month calendar-day-2017-02-04 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">4</div></td></tr><tr><td class="day adjacent-month next-month calendar-day-2017-02-05 calendar-dow-0" style="background-color: rgba(0, 0, 0, 0.0666667);"><div class="day-contents">5</div></td><td class="day adjacent-month next-month calendar-day-2017-02-06 calendar-dow-1" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">6</div></td><td class="day adjacent-month next-month calendar-day-2017-02-07 calendar-dow-2" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">7</div></td><td class="day adjacent-month next-month calendar-day-2017-02-08 calendar-dow-3" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">8</div></td><td class="day adjacent-month next-month calendar-day-2017-02-09 calendar-dow-4" style="background-color: rgba(0, 0, 0, 0.0784314);"><div class="day-contents">9</div></td><td class="day adjacent-month next-month calendar-day-2017-02-10 calendar-dow-5" style="background-color: rgba(0, 0, 0, 0.0980392);"><div class="day-contents">10</div></td><td class="day adjacent-month next-month calendar-day-2017-02-11 calendar-dow-6" style="background-color: rgba(0, 0, 0, 0);"><div class="day-contents">11</div></td></tr></tbody></table></div></div>
+      <div class="recurring-events-section">
+        <div class="event-name">Recurring Events</div>
+        <div class="event-name"><span class="event-date">Dec 2, 11am  | </span>Medication Mgmt Call, Every 2 Weeks</div>
+        <div class="event-name"><span class="event-date">Dec 6, 9am  | </span>Review Patient Goals, Every Week</div>
+        <div class="event-name"><span class="event-date">Dec 10, 3pm | </span>Weekly Status Check, Every Week</div>
+        <div class="event-name"><span class="event-date">Dec 14  | </span>Re-assessment Every Week</div>
+      </div>
+    </div>
+    <div id="spr-wrapper" class="">
+
+
+<!--
+  <div class="row">
+    <div class="chart-section-text">JUMP TO:</div>
+       <select class="chart-section-select">
+            </select>
+  </div>
+-->
+    <div class="spr-nav">
+
+    <a class="chart-nav-item" divlink="Context" id="nav-Context">Context<br></a><a class="chart-nav-item" divlink="Demographics" id="nav-Demographics">Demographics<br></a><a class="chart-nav-item" divlink="CareTeam" id="nav-CareTeam">Care Team<br></a><a class="chart-nav-item active" divlink="Interventions" id="nav-Interventions">Interventions<br></a><a class="chart-nav-item" divlink="Notes" id="nav-Notes">Notes<br></a><a class="chart-nav-item" divlink="QualityGaps" id="nav-QualityGaps">Quality Gaps<br></a><a class="chart-nav-item" divlink="CareGaps" id="nav-CareGaps">Care Gaps<br></a><a class="chart-nav-item" divlink="Vitals" id="nav-Vitals">Vitals<br></a><a class="chart-nav-item" divlink="Conditions" id="nav-Conditions">Conditions<br></a><a class="chart-nav-item" divlink="Utilization" id="nav-Utilization">Utilization<br></a><a class="chart-nav-item" divlink="Appointments" id="nav-Appointments">Appointments<br></a><a class="chart-nav-item" divlink="Medications" id="nav-Medications">Medications<br></a><a class="chart-nav-item" divlink="ProblemList" id="nav-ProblemList">Problem List<br></a><a class="chart-nav-item" divlink="Preventive" id="nav-Preventive">Preventive<br></a><a class="chart-nav-item" divlink="Asthma" id="nav-Asthma">Asthma<br></a></div>
+    <div class="spr-content"><div class="chart-section" id="Context"><div class="chart-section-title">Context</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">Current Care Manager : </span>d Talib</div><div class="card-row-data"><span class="card-item-header">Care Mgmt Status : </span>Enrolled</div><div class="card-row-data"><span class="card-item-header">Next Appt : </span>12/19/2016  w/ Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">Last Visit : </span>09/19/2016 w/ Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">Follow Up : </span>null</div><div class="card-row-data"><span class="card-item-header">pMPM : </span>4271</div><div class="card-row-data"><span class="card-item-header">risk : </span>4.6 (HCC)</div><div class="card-row-data"><span class="card-item-header">payerPlan : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">payerClinical : </span>null</div><div class="card-row-data"><span class="card-item-header">Inpatient Hospital : </span>12/25/2015 (Cerebral infarction, unspecified)</div></div></div><div class="chart-section" id="Demographics"><div class="chart-section-title">Demographics</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Martinez, Juana </div><div class="card-row-data"><span class="card-item-header">born : </span>1932-04-13</div><div class="card-row-data"><span class="card-item-header">age : </span>84</div><div class="card-row-data"><span class="card-item-header">sex : </span>F</div><div class="card-row-data"><span class="card-item-header">language : </span>Spanish</div><div class="card-row-data"><span class="card-item-header">race : </span>Needs Update</div><div class="card-row-data"><span class="card-item-header">ethnicity : </span>Hispanic or Latino</div><div class="card-row-data"><span class="card-item-header">address1 : </span>1519 ROSEDALE AVENUE</div><div class="card-row-data"><span class="card-item-header">city : </span>New York</div><div class="card-row-data"><span class="card-item-header">state : </span>NY</div><div class="card-row-data"><span class="card-item-header">zip : </span>10460</div><div class="card-row-data"><span class="card-item-header">phoneNumber : </span>717-555-9532</div><div class="card-row-data"><span class="card-item-header">email : </span>Juana.Martinez@ymail.com</div><div class="card-row-data"><span class="card-item-header">PMPM : </span>4271</div><div class="card-row-data"><span class="card-item-header">payer : </span>Commercial #6628 (Family Health (eCW)), Commercial #10720 (Family Health (eCW)), Commercial #12025 (Family Health (eCW))</div><div class="card-row-data"><span class="card-item-header">MRN : </span>34097548 (Family Health (eCW))</div></div></div><div class="chart-section" id="CareTeam"><div class="chart-section-title">Care Team</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">Care Manager : </span></div><div class="card-row-data"><span class="card-item-header">Pharmacist : </span></div><div class="card-row-data"><span class="card-item-header">Functional PCP : </span></div><div class="card-row-data"><span class="card-item-header">Clinical PCP : </span></div><div class="card-row-data"><span class="card-item-header">Family : </span></div></div></div><div class="chart-section" id="Interventions">
+
+
+
+
+
+  <div class="input-field left">
+    <select multiple="">
+      <option value="1" disabled="" selected="">▼</option>
+      <option value="2">Improve Diet</option>
+      <option value="3">Lower Blood Sugar</option>
+      <option value="4">Manage Medication</option>
+    </select>
+  </div>
+</div><div class="chart-section" id="Notes"><div class="chart-section-title">Notes</div></div><div class="chart-section" id="QualityGaps"><div class="chart-section-title">Quality Gaps</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Albumin Creatinine Ratio</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Allergy List</div><div class="card-row-data"><span class="card-item-header">date : </span>05/29/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Active Allergy</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>BMI</div><div class="card-row-data"><span class="card-item-header">date : </span>11/13/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>34.8</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Colonoscopy</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Depression Screen</div><div class="card-row-data"><span class="card-item-header">date : </span>08/16/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Completed on 05/22/2015</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Dialysis</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Fall Risk</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Flu Vacc</div><div class="card-row-data"><span class="card-item-header">date : </span>12/01/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Glomerular Filtration Rate</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>HDL</div><div class="card-row-data"><span class="card-item-header">date : </span>01/18/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>74.0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Generic Facility #277899731</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>LDL</div><div class="card-row-data"><span class="card-item-header">date : </span>01/18/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>79.0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Generic Facility #277899731</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Mammogram</div><div class="card-row-data"><span class="card-item-header">date : </span>11/18/2011</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Med List</div><div class="card-row-data"><span class="card-item-header">date : </span>09/14/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Active Medication</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Nephrologist Visit</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>PAP Result</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Triglycerides</div><div class="card-row-data"><span class="card-item-header">date : </span>01/18/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>72.0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Generic Facility #277899731</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Urine Protein</div><div class="card-row-data"><span class="card-item-header">date : </span>01/18/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Generic Facility #277899731</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div></div><div class="chart-section" id="CareGaps"><div class="chart-section-title">Care Gaps</div></div><div class="chart-section" id="Vitals"><div class="chart-section-title">Vitals</div></div><div class="chart-section" id="Conditions"><div class="chart-section-title">Conditions</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Cardio-Respiratory Failure and Shock</div><div class="card-row-data"><span class="card-item-header">category : </span>Arrest</div><div class="card-row-data"><span class="card-item-header">source : </span>Historical Claim</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-08-26</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-08-26</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>518.83</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Chronic respiratory failure</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Fox, Summer</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>84</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Hemiplegia/Hemiparesis</div><div class="card-row-data"><span class="card-item-header">category : </span>Cerebrovascular Disease</div><div class="card-row-data"><span class="card-item-header">source : </span>Historical Claim</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>G81.91</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Hemiplegia, unspecified affecting right dominant side        </div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Powell, Barbara</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>103</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Ischemic or Unspecified Stroke</div><div class="card-row-data"><span class="card-item-header">category : </span>Cerebrovascular Disease</div><div class="card-row-data"><span class="card-item-header">source : </span>Historical Claim</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-12-27</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-12-27</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Herrera, Uriel</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>100</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Acute Myocardial Infarction</div><div class="card-row-data"><span class="card-item-header">category : </span>Heart</div><div class="card-row-data"><span class="card-item-header">source : </span>Historical Claim</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-03-10</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-03-10</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>410.71</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Subendocardial infarction, initial episode of care</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Thompson, Peter</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>86</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Unstable Angina and Other Acute Ischemic Heart Disease</div><div class="card-row-data"><span class="card-item-header">category : </span>Heart</div><div class="card-row-data"><span class="card-item-header">source : </span>Historical Claim</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-08-04</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-08-04</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>410.90</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Acute myocardial infarction of unspecified site, episode of care unspecified</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Morgan, Melinda</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>87</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Major Depressive, Bipolar, and Paranoid Disorders</div><div class="card-row-data"><span class="card-item-header">category : </span>Psychiatric</div><div class="card-row-data"><span class="card-item-header">source : </span>Medication List / Prescriptions</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>null</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2015-11-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>Seroquel 25 mg tablet</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>null</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">facility : </span>Generic Facility #277899731</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>58</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Vascular Disease with Complications</div><div class="card-row-data"><span class="card-item-header">category : </span>Vascular</div><div class="card-row-data"><span class="card-item-header">source : </span>Problem List</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-09-20</div><div class="card-row-data"><span class="card-item-header">gap : </span>Y</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2012-08-17</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>441.00</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Dissection of aorta, unspecified site</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Tran, Earl</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>107</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Congestive Heart Failure</div><div class="card-row-data"><span class="card-item-header">category : </span>Heart</div><div class="card-row-data"><span class="card-item-header">source : </span>Current Assessment</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-09-30</div><div class="card-row-data"><span class="card-item-header">gap : </span>N</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2016-09-11</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>428.0</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Congestive heart failure, unspecified</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>85</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Specified Heart Arrhythmias</div><div class="card-row-data"><span class="card-item-header">category : </span>Heart</div><div class="card-row-data"><span class="card-item-header">source : </span>Current Assessment</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-12-27</div><div class="card-row-data"><span class="card-item-header">gap : </span>N</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2016-09-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>96</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Chronic Obstructive Pulmonary Disease</div><div class="card-row-data"><span class="card-item-header">category : </span>Lung</div><div class="card-row-data"><span class="card-item-header">source : </span>Current Assessment</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>2015-12-27</div><div class="card-row-data"><span class="card-item-header">gap : </span>N</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2016-09-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>496</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Chronic airway obstruction, not elsewhere classified</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>111</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">riskDescription : </span>Morbid Obesity</div><div class="card-row-data"><span class="card-item-header">category : </span>Metabolic</div><div class="card-row-data"><span class="card-item-header">source : </span>Current Assessment</div><div class="card-row-data"><span class="card-item-header">relatedClaimDt : </span>null</div><div class="card-row-data"><span class="card-item-header">gap : </span>N</div><div class="card-row-data"><span class="card-item-header">sourceDateDt : </span>2016-09-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>278.01</div><div class="card-row-data"><span class="card-item-header">dxDescription : </span>Morbid obesity</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">dismissedUser : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedReason : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedAt : </span>null</div><div class="card-row-data"><span class="card-item-header">dismissedId : </span>null</div><div class="card-row-data"><span class="card-item-header">groupId : </span>22</div><div class="card-row-data"><span class="card-item-header">riskAlgId : </span>55</div></div></div><div class="chart-section" id="Utilization"><div class="chart-section-title">Utilization</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-12-01</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-11-25</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-11-17</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-10-24</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-10-09</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Gretch, Nick</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-10-04</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-09-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-09-11</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-08-30</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Gretch, Nick</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-08-11</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-08-01</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-07-14</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2016-06-23</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Reyes, Alicia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-27</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Herrera, Uriel</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-25</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Burson, Amanda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-23</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Burson, Amanda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-18</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Adams, Amy</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-18</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Burson, Amanda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-14</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Chart Update</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-12</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Burson, Amanda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-11</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Burson, Amanda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-09</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Chart Update</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-08</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.412</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cereb infrc due to embolism of left middle cerebral artery   </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Price, Mason</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>G81.91</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Hemiplegia, unspecified affecting right dominant side        </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Powell, Barbara</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I50.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Heart failure, unspecified                                   </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Kim, Joy</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Ambulance - Land</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Estelle, Janice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Emergency Room - Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Morgan, Melinda</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Emergency Room - Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Stevens, Noah</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Inpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Roberts, Ian</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-12-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>I63.9</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral infarction, unspecified                             </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Outpatient Hospital</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Kaur, Chloe</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-27</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-23</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>J44.1</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Chronic obstructive pulmonary disease w (acute) exacerbation </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-07</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>J44.1</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Chronic obstructive pulmonary disease w (acute) exacerbation </div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-01</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Independent Laboratory</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Sanchez, Marisol</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-11-01</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-29</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-20</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Coumadin Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>434.91</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral artery occlusion, unspecified with cerebral infarction</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Home</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Homan, Jennifer</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-08</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Independent Laboratory</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Sanchez, Marisol</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-08</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-06</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>496</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Chronic airway obstruction, not elsewhere classified</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Home</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>David, Oliver</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-04</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Unknown</div><div class="card-row-data"><span class="card-item-header">facility : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office Visit</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-10-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>434.91</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral artery occlusion, unspecified with cerebral infarction</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Home</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Homan, Jennifer</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-09-30</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-09-29</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>428.30</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Diastolic heart failure, unspecified</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Office</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">dateDt : </span>2015-09-27</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>434.91</div><div class="card-row-data"><span class="card-item-header">dxDesc : </span>Cerebral artery occlusion, unspecified with cerebral infarction</div><div class="card-row-data"><span class="card-item-header">facility : </span>null</div><div class="card-row-data"><span class="card-item-header">visitType : </span>Home</div><div class="card-row-data"><span class="card-item-header">visitTypeInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">renderingProvider : </span>Homan, Jennifer</div></div></div><div class="chart-section" id="Appointments"><div class="chart-section-title">Appointments</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2016-12-19</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2016-12-23</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-01-04</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Gretch, Nick</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Physician Assistant</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-01-09</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-01-25</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-02-02</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Gretch, Nick</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Physician Assistant</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-02-10</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-03-28</div><div class="card-row-data"><span class="card-item-header">location : </span>St. Garfield's Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Hart, Sheri</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-04-01</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-05-10</div><div class="card-row-data"><span class="card-item-header">location : </span>East Valley Medical Clinic</div><div class="card-row-data"><span class="card-item-header">provider : </span>Ward, Ruth</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Physician Assistant</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-05-15</div><div class="card-row-data"><span class="card-item-header">location : </span>East Valley Medical Clinic</div><div class="card-row-data"><span class="card-item-header">provider : </span>Ward, Ruth</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Physician Assistant</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-07-20</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-08-05</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-08-31</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Koonkhuntod, Dru</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Other</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-09-20</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-10-04</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-10-19</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-10-20</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-10-29</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-11-13</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-11-23</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-11-27</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">date : </span>2017-12-20</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div><div class="card-row-data"><span class="card-item-header">time : </span>null</div><div class="card-row-data"><span class="card-item-header">specialty : </span>Family Practice</div></div></div><div class="chart-section" id="Medications"><div class="chart-section-title">Medications</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>potassium chloride ER 10 mEq capsule,extended release</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-10-03</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>diltiazem ER 240 mg capsule,extended release</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-08-30</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>atorvastatin 40 mg tablet</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-08-14</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Tirosint 88 mcg capsule</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-08-09</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Spiriva with HandiHaler 18 mcg &amp; inhalation capsules</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-06-13</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>pantoprazole 40 mg tablet,delayed release</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-05-28</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Tirosint 100 mcg capsule</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-05-27</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>digoxin 125 mcg tablet</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-05-18</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Seroquel 25 mg tablet</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-05-13</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>levalbuterol 1.25 mg/3 mL solution for nebulization</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-05-07</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>ketotifen 0.025 % eye drops</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-04-16</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>furosemide 40 mg tablet</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2015-01-04</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Miralax 17 gram/dose oral powder</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2014-11-02</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>albuterol sulfate 2.5 mg/0.5 mL solution for nebulization</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2014-03-21</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>Brovana 15 mcg/2 mL Neb Solution</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2013-05-29</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>gloves, latex with aloe vera</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2013-05-22</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>budesonide 1 mg/2 mL Neb Suspension</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>2013-05-05</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">medicationName : </span>losartan 25 mg tablet</div><div class="card-row-data"><span class="card-item-header">rxDateDt : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div></div><div class="chart-section" id="ProblemList"><div class="chart-section-title">Problem List</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-12-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>496</div><div class="card-row-data"><span class="card-item-header">description : </span>Chronic airway obstruction, not elsewhere classified</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-11-19</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>553.8</div><div class="card-row-data"><span class="card-item-header">description : </span>Hernia of other specified sites without mention of obstruction or gangrene</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-10-20</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>V12.54</div><div class="card-row-data"><span class="card-item-header">description : </span>Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-09-30</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>424.1</div><div class="card-row-data"><span class="card-item-header">description : </span>Aortic valve disorders</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-09-22</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>401.9</div><div class="card-row-data"><span class="card-item-header">description : </span>Unspecified essential hypertension</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-09-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>429.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Cardiomegaly</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-08-13</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>244.9</div><div class="card-row-data"><span class="card-item-header">description : </span>Unspecified hypothyroidism</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-05-21</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>428.30</div><div class="card-row-data"><span class="card-item-header">description : </span>Unspecified diastolic heart failure</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-02-28</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">description : </span>Atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2015-01-22</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>585.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Chronic kidney disease, Stage III (moderate)</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2013-08-05</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>null</div><div class="card-row-data"><span class="card-item-header">description : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2013-02-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>535.50</div><div class="card-row-data"><span class="card-item-header">description : </span>Gastritis, unspec. w/o hemorrhage</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2012-08-17</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>441.00</div><div class="card-row-data"><span class="card-item-header">description : </span>Intramural aortic hematoma</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2012-05-04</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>585.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Chronic kidney disease (CKD), stage III (moderate)</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2012-02-27</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>278.00</div><div class="card-row-data"><span class="card-item-header">description : </span>Obesity</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2011-10-29</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>427.31</div><div class="card-row-data"><span class="card-item-header">description : </span>Paroxysmal atrial fibrillation</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-12-20</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>241.1</div><div class="card-row-data"><span class="card-item-header">description : </span>Goiter, nontoxic multinodular</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-12-08</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>429.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Cardiomegaly</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-09-07</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>733.00</div><div class="card-row-data"><span class="card-item-header">description : </span>Generalized osteoporosis moderate-severe</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-08-21</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>401.9</div><div class="card-row-data"><span class="card-item-header">description : </span>Hypertension, unspec.</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-08-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>727.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Subcromial bursitis right shoulder</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-05-20</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>396.3</div><div class="card-row-data"><span class="card-item-header">description : </span>Aortic insufficiency, mild</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-05-16</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>496</div><div class="card-row-data"><span class="card-item-header">description : </span>COPD, NOS</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-05-15</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>472.0</div><div class="card-row-data"><span class="card-item-header">description : </span>Rhinitis, chronic</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-03-03</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>354.0</div><div class="card-row-data"><span class="card-item-header">description : </span>Carpal tunnel syndrome right wrist</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">addedDt : </span>2010-02-18</div><div class="card-row-data"><span class="card-item-header">dxCode : </span>493.92</div><div class="card-row-data"><span class="card-item-header">description : </span>Asthma, unspec. w/ acute exacerbation</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div></div></div><div class="chart-section" id="Preventive"><div class="chart-section-title">Preventive</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Med List</div><div class="card-row-data"><span class="card-item-header">date : </span>09/14/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Active Medication</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Allergy List</div><div class="card-row-data"><span class="card-item-header">date : </span>05/29/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Active Allergy</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Med Rec</div><div class="card-row-data"><span class="card-item-header">date : </span>11/27/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Barrios Santiago, Guillermo</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>BMI</div><div class="card-row-data"><span class="card-item-header">date : </span>11/13/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>34.8</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>1</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Colonoscopy</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Fall Risk</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Depression Screen</div><div class="card-row-data"><span class="card-item-header">date : </span>08/16/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Completed on 05/22/2015</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Flu Vacc</div><div class="card-row-data"><span class="card-item-header">date : </span>12/01/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Physical Exam</div><div class="card-row-data"><span class="card-item-header">date : </span>10/05/2011</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>Ashmore, Jeffrey</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Tobacco Status</div><div class="card-row-data"><span class="card-item-header">date : </span>11/27/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>no/never</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Tobacco Cessation</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Pneumo Vacc</div><div class="card-row-data"><span class="card-item-header">date : </span>01/28/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Gretch, Nick</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Mammogram</div><div class="card-row-data"><span class="card-item-header">date : </span>11/18/2011</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>PAP Result</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>High Risk Medication</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Osteoporosis Screen</div><div class="card-row-data"><span class="card-item-header">date : </span>12/24/2012</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>NW Health - Facets</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>McGaa, Jasmine</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>BP</div><div class="card-row-data"><span class="card-item-header">date : </span>11/27/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>108/69</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div></div><div class="chart-section" id="Asthma"><div class="chart-section-title">Asthma</div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Control Med</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Rescue Med</div><div class="card-row-data"><span class="card-item-header">date : </span>Active</div><div class="card-row-data"><span class="card-item-header">value : </span>levalbuterol 1.25 mg/3 mL solution for nebulizatio</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Tobacco Status</div><div class="card-row-data"><span class="card-item-header">date : </span>11/27/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>no/never</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>0</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Depression Screen</div><div class="card-row-data"><span class="card-item-header">date : </span>08/16/2015</div><div class="card-row-data"><span class="card-item-header">value : </span>Completed on 05/22/2015</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>Flu Vacc</div><div class="card-row-data"><span class="card-item-header">date : </span>12/01/2014</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>1</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>0</div><div class="card-row-data"><span class="card-item-header">source : </span>Family Health (eCW)</div><div class="card-row-data"><span class="card-item-header">location : </span>Kingdom Hospital</div><div class="card-row-data"><span class="card-item-header">provider : </span>Carrillo, Silvia</div></div><div class="summary-item"><div class="card-row-data"><span class="card-item-header">name : </span>BP</div><div class="card-row-data"><span class="card-item-header">date : </span>null</div><div class="card-row-data"><span class="card-item-header">value : </span>null</div><div class="card-row-data"><span class="card-item-header">dateInd : </span>null</div><div class="card-row-data"><span class="card-item-header">valueInd : </span>null</div><div class="card-row-data"><span class="card-item-header">source : </span>null</div><div class="card-row-data"><span class="card-item-header">location : </span>null</div><div class="card-row-data"><span class="card-item-header">provider : </span>null</div></div></div></div>
+  <!--  here is the switch-->
+    </div>
+  </div><div class="vsplitter" style="left: 350px;"></div>
+
+  <div class="task-pane right_panel" style="width: 782px;">
+  <div class="row task-pane-nav">
+
+    <!-- <ul id="task-dropdown" class="dropdown-content">
+      <li><a class="grey-text darken-3 option modal-trigger" data-target="quick-task-modal">Quick Reminder</a></li>
+      <li class="divider"></li>
+      <li><a class="grey-text darken-3 option right-link" activates="#task-new">Conduct</a></li>
+      <li class="divider"></li>
+      <li><a class="grey-text darken-3 option right-link" activates="#task-assessment">Schedule</a></li>
+
+    </ul> -->
+
+    <ul id="note-dropdown" class="dropdown-content">
+      <li><a class="grey-text darken-3 option right-link" nav-link="#nav-Notes" activates="#note">Care
+      </a></li>
+      <li><a class="grey-text darken-3 option right-link" nav-link="#nav-Notes" activates="#note-freeform">Free Form</a></li>
+    </ul>
+
+    <div class="nav-options">
+      <div class="nav-task dropdown-button right-link active" activates="#task-new">
+        TASK
+        <!-- <i class="material-icons right">arrow_drop_down</i> -->
+      </div>
+
+      <!-- <div class="nav-note right-link" activates="#note">NOTE</div> -->
+      <div class="nav-goals right-link" nav-link="#nav-Goals" activates="#goals" noscroll="true">PLAN</div>
+      <div class="nav-task dropdown-button right-link" activates="#note">
+        NOTE
+        <!-- <i class="material-icons right">arrow_drop_down</i> -->
+        <!-- <div class="note-footer">
+
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+
+    <div id="quick-task-modal" class="modal">
+      <div class="modal-content">
+      <h5 style="color: gray">QUICK ADD TASK</h5>
+      <p>Patient: Alexander Singh</p>
+      <div class="input-field col s12">
+        <input placeholder="Enter Description" id="first_name" type="text" class="validate">
+      </div>
+        <a class="waves-effect waves-light btn" style="float:right; margin-bottom: 20px">Save</a>
+      </div>
+    </div>
+
+    <div class="task-pane-content-wrapper">
+        <div class="task-pane-content">
+
+          <!-- Change the width and height values to suit you best -->
+          <div id="typeform" class="typeform-widget task-type hidden" data-url="https://arcadiaanalytics.typeform.com/to/X9os06" data-text="Arcadia Analytics v4.10 Quick Start" style="width:100%;height:500px;"></div>
+
+          <div id="task-new" class="task-type"><form lpformnum="1">
+  <!-- <div class="row task-pane-footer">
+      TASK SELECTION > OUTREACH > FOLLOW-UP
+  </div> -->
+
+  <div class="nextbtn">
+     <i class="material-icons">navigate_next</i>
+  </div>
+
+  <div class="left-wrapper wrapper col s4 active">
+    <div class="inner-wrapper">
+      <div class="row header-row col s12">
+        <div class="headerholder-two">
+          <i class="material-icons directory">keyboard_arrow_down</i>
+          <div class="textholda">
+            TYPE
+          </div>
+        </div>
+      </div>
+      <ul class="collection col s12">
+        <li class="collection-item" type="assign">
+          <i class="material-icons">assignment_ind</i>
+          <div class="coll-text">
+            Assign
+          </div>
+        </li>
+        <li class="collection-item" type="assess">
+          <i class="material-icons">assessment</i>
+          <div class="coll-text col s6">
+            Assess
+          </div>
+        </li>
+        <li class="collection-item" type="evaluate">
+          <i class="material-icons">call</i>
+          <div class="coll-text col s6">
+            Evalulate
+          </div>
+        </li>
+        <li class="collection-item" type="message">
+          <i class="material-icons">mail_outline</i>
+          <div class="coll-text col s6">
+            Message
+          </div>
+        </li>
+        <li class="collection-item" type="share">
+          <i class="material-icons">share</i>
+          <div class="coll-text col s6">
+            Share
+          </div>
+        </li>
+        <li class="collection-item" type="custom">
+          <i class="material-icons">alarm</i>
+          <div class="coll-text col s6">
+            Remind
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+
+
+
+  <div class="right-wrapper wrapper  col s8">
+  <div class="inner-wrapper-details">
+      <div class="row header-row">
+        <div class="headerholder-two">
+          <i class="material-icons directory">keyboard_arrow_down</i>
+          <div class="textholda">
+            DETAILS
+          </div>
+        </div>
+      </div>
+      <div class="row col s12">
+        <ul class="collection col s12" style="padding:0">
+          <li class="task-item second-layer hidden" time="all" assess="true">
+            <div class="input-label left form mandatory">
+               Assessment Form:
+            </div>
+            <div class="input-field left">
+              <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-b10a0190-d208-f5ca-5593-93526a9f7117" value="▼"><ul id="select-options-b10a0190-d208-f5ca-5593-93526a9f7117" class="dropdown-content select-dropdown "><li class="disabled "><span>▼</span></li><li class=""><span>Complex Case Management</span></li><li class=""><span>Transition of Care</span></li><li class=""><span>Disease Management - General</span></li><li class=""><span>Disease Management - Diabetes</span></li><li class=""><span>Disease Management - COPD</span></li><li class=""><span>Disease Management - CHF</span></li><li class=""><span>Disease Management - Asthma</span></li><li class=""><span>Disease Management - Depression</span></li></ul><select class="initialized">
+                <option value="" disabled="" selected="">▼</option>
+                <option value="1">Complex Case Management</option>
+                <option value="2">Transition of Care</option>
+                <option value="3">Disease Management - General</option>
+                <option value="4">Disease Management - Diabetes</option>
+                <option value="5">Disease Management - COPD</option>
+                <option value="6">Disease Management - CHF</option>
+                <option value="7">Disease Management - Asthma</option>
+                <option value="8">Disease Management - Depression</option>
+              </select></div>
+            </div>
+          </li>
+          <li class="task-item second-layer hidden" time="all" evaluate="true">
+            <!-- <i class="material-icons prefix">arrow_drop_down</i> -->
+            <div class="input-label left form mandatory">
+              Focus Problems:
+            </div>
+            <div class="input-field left mandatory border">
+              <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-6a5d307b-e664-b84c-08ff-fdd17a839ddc" value="▼"><ul id="select-options-6a5d307b-e664-b84c-08ff-fdd17a839ddc" class="dropdown-content select-dropdown multiple-select-dropdown"><li class="disabled "><span><input type="checkbox" disabled=""><label></label>▼</span></li><li class=""><span><input type="checkbox"><label></label>Diabetes</span></li><li class=""><span><input type="checkbox"><label></label>Hypertension</span></li><li class=""><span><input type="checkbox"><label></label>Obesity</span></li></ul><select multiple="" class="initialized">
+                <option style="color:rgba(0,0,0,.4)" value="1" disabled="" selected="">▼</option>
+                <option value="2">Diabetes</option>
+                <option value="3">Hypertension</option>
+                <option value="4">Obesity</option>
+              </select></div>
+            </div>
+            <div style="clear:both">
+
+            </div>
+            <div class="input-label left form mandatory ">
+              Goals:
+            </div>
+
+            <div class="input-field left border">
+              <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-fe7d69d0-348e-49a7-0748-98a63b2f7ee2" value="▼"><ul id="select-options-fe7d69d0-348e-49a7-0748-98a63b2f7ee2" class="dropdown-content select-dropdown multiple-select-dropdown"><li class="disabled "><span><input type="checkbox" disabled=""><label></label>▼</span></li><li class=""><span><input type="checkbox"><label></label>Improve Diet</span></li><li class=""><span><input type="checkbox"><label></label>Lower Blood Sugar</span></li><li class=""><span><input type="checkbox"><label></label>Exercise 3x/week</span></li></ul><select multiple="" class="initialized">
+                <option value="1" disabled="" selected="">▼</option>
+                <option value="2">Improve Diet</option>
+                <option value="3">Lower Blood Sugar</option>
+                <option value="4">Exercise 3x/week</option>
+              </select></div>
+            </div>
+
+          </li>
+          <li class="task-item second-layer hidden" now="true" schedule="true" evaluate="true">
+            <!-- <i class="material-icons prefix">arrow_drop_down</i> -->
+            <!-- <div class="input-field">
+              <select multiple>
+                <option value="" disabled selected>Select Goals</option>
+                <option value="1">Improve Diet</option>
+                <option value="2">Lower Blood Sugar</option>
+                <option value="3">Exercise 3x/week</option>
+              </select>
+            </div> -->
+
+          </li>
+
+          <li class="task-item second-layer hidden" assess="true" evaluate="true" custom="true" style="height: 50px" time="all">
+            <!-- <i class="material-icons prefix write" style="font-size: 16px" >edit</i> -->
+            <div class="input-label left form">
+              Title
+            </div>
+            <div class="input-field left">
+                <textarea id="textarea-message" class="materialize-textarea textarea-form"></textarea>
+            </div>
+          </li>
+
+          <li class="task-item second-layer hidden" message="true" style="height: 50px" time="all">
+            <div class="input-label left form">
+            Recipient
+            </div>
+            <div class="input-field left">
+              <textarea id="textarea-team" class="materialize-textarea textarea-form" style="height: 21.6px;">enter name </textarea>
+            </div>
+          </li>
+
+          <li class="task-item second-layer hidden" message="true" style="height: 50px" time="all">
+            <div class="input-label left form">
+            Send existing note:
+            </div>
+            <div class="input-field left">
+              <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-aa4cd0db-8534-4313-6371-71fee0463c80" value="Select"><ul id="select-options-aa4cd0db-8534-4313-6371-71fee0463c80" class="dropdown-content select-dropdown multiple-select-dropdown"><li class="disabled "><span><input type="checkbox" disabled=""><label></label>Select</span></li><li class=""><span><input type="checkbox"><label></label>Diabetes</span></li><li class=""><span><input type="checkbox"><label></label>Hypertension</span></li><li class=""><span><input type="checkbox"><label></label>Obesity</span></li></ul><select multiple="" class="initialized">
+                <option value="1" disabled="" selected="">Select</option>
+                <option value="2">Diabetes</option>
+                <option value="3">Hypertension</option>
+                <option value="4">Obesity</option>
+              </select></div>
+            </div>
+          </li>
+
+          <li class="task-item second-layer hidden" message="true" style="height: 50px" time="all">
+            <div class="input-label left form">
+                Content:
+            </div>
+            <div class="input-field left">
+                <textarea id="textarea-message" class="materialize-textarea textarea-form" style="height: 21.6px;">enter message</textarea>
+            </div>
+          </li>
+
+          <li class="task-item second-layer hidden" message="true" style="height: 50px" time="all">
+            <div class="input-label left form">
+              Relevant to Care Team?
+            </div>
+          </li>
+
+
+
+
+          <li class="task-item hidden" assess="true" assign="true" evaluate="true" style="margin-top:30px" custom="true" time="all">
+            <div class="input-label form left mandatory">
+              When?
+            </div>
+            <div class="two-option left" time="now">
+              Now
+            </div>
+            <div class="two-option left" time="schedule">
+              Later
+            </div>
+          </li>
+          <li class="task-item second-layer hidden" style="padding-top: 0px; height: 90px" schedule="true" all="true">
+            <!-- <i class="material-icons prefix write" style="font-size: 16px" >edit</i> -->
+            <div class="input-label left form mandatory">
+              Date:
+            </div>
+            <textarea id="textarea-time" style="letter-spacing:.8px; font-weight: 900" class="materialize-textarea textarea-form"></textarea>
+
+            <div style="clear:both"></div>
+
+            <div class="input-label left form mandatory">
+              Time:
+            </div>
+
+            <textarea id="textarea-repeat" class="materialize-textarea textarea-form" style="letter-spacing:.8px; font-weight: 900"></textarea>
+            <br>
+            <div class="textholda" style="font-style:italic">
+              Repeat Every:
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
+  </div>
+
+  </div>
+</form></div>
+          <div id="task-assign" noscroll="true" class="hidden task-type"><!-- <div class="row col s9">
+  <div class="instructions">
+    Select Care Manager for assignment:
+  </div>
+</div> -->
+
+<!-- <div class="instructions">
+  Select Care Manager for assignment:
+</div> -->
+<div class="back-button">
+</div>
+<div class="flow">
+  TASK SELECT &gt; ASSIGN &gt; <strong>SELECT CM </strong>
+  <!-- <div class="flow-noti">
+    <strong>Patient successfully assigned!</stro>
+  </div>
+  <div class="right noti">
+        <i class="material-icons">subdirectory_arrow_right</i>Back Home
+  </div> -->
+</div>
+
+
+<div class="collapsible-wrapper">
+  <div class="collapsible-tableheader">
+    <div class="collapsible-fake-column">
+      Name
+    </div>
+    <div class="collapsible-fake-column">
+      Pod
+    </div>
+    <div class="collapsible-fake-column">
+      Total CM Score
+    </div>
+  </div>
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <!-- <div class="assign-cm-button right-link" activates="#assign-cm-message">
+        + assign
+        </div> -->
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <div class="collapsible-column">
+          Michael, John
+        </div>
+        <div class="collapsible-column">
+          NW Healthcare
+        </div>
+        <div class="collapsible-column">
+          33.5
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <p><strong>Location:</strong> Somerville, MA 02144
+          <br><strong>Phone:</strong> 401-333-2912
+          <br><strong>Email:</strong> crashoverride3000@gmail.com
+          <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+        </p>
+      </div>
+      </li><li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="collapsible-column">
+            Michael, John
+          </div>
+          <div class="collapsible-column">
+            NW Healthcare
+          </div>
+          <div class="collapsible-column">
+            33.5
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <p><strong>Location:</strong> Somerville, MA 02144
+            <br><strong>Phone:</strong> 401-333-2912
+            <br><strong>Email:</strong> crashoverride3000@gmail.com
+            <br><strong>Patient Types Managed:</strong> 37 Complex Case, 32 Wellness
+          </p>
+        </div>
+      </li>
+    
+
+  </ul>
+
+</div>
+
+
+<!-- <table class="bordered assign-table">
+  <thead>
+    <tr>
+      <th>
+        Care Manager
+      </th>
+      <th>
+        Pod
+      </th>
+      <th>
+        Panel Complexity
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Michael, John
+      </td>
+      <td>
+        NW Healthcare
+      </td>
+      <td>
+        6.5
+      </td>
+    </tr>
+
+  </tbody>
+</table> -->
+</div>
+          <div id="task-assess" class="hidden task-type"><div class="typeform-widget" data-url="https://arcadiaanalytics.typeform.com/to/PD46Xn" data-text="CCM" style="width:100%;height:100%;"></div>
+</div>
+          <div id="task-assign" class="hidden task-type"></div>
+          <div id="task-message" class="hidden task-type"></div>
+          <div id="task-team" class="hidden task-type"></div>
+          <div id="goals" noscroll="true" class="task-type hidden">
+<div class="back-button">
+</div>
+<div class="flow">
+  <div class="flowtext left">
+  <strong>Focus Problems:</strong>
+  </div>
+
+  <div class="input-field left">
+    <div class="select-wrapper"><span class="caret">▼</span><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-ed09404a-0e20-84de-9e59-2b124705775b" value="▼"><ul id="select-options-ed09404a-0e20-84de-9e59-2b124705775b" class="dropdown-content select-dropdown multiple-select-dropdown"><li class="disabled "><span><input type="checkbox" disabled=""><label></label>▼</span></li><li class=""><span><input type="checkbox"><label></label>Improve Diet</span></li><li class=""><span><input type="checkbox"><label></label>Lower Blood Sugar</span></li><li class=""><span><input type="checkbox"><label></label>Manage Medication</span></li></ul><select multiple="" class="initialized">
+      <option value="1" disabled="" selected="">▼</option>
+      <option value="2">Improve Diet</option>
+      <option value="3">Lower Blood Sugar</option>
+      <option value="4">Manage Medication</option>
+    </select></div>
+  </div>
+
+</div>
+
+
+<div class="collapsible-wrapper">
+  <div class="collapsible-tableheader">
+    <div class="headertext-goal">
+      Goals (click to view associated interventions)
+    </div>
+  </div>
+  <ul class="collapsible goal-page" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header goals">
+         Transition to healthy diabetes diet
+      </div>
+      <div class="collapsible-body">
+        <!-- <div class="assign-cm-button right-link" activates="#assign-cm-message">
+        + assign
+        </div> -->
+        <div class="intervention">
+          <div class="intervention-grouper">
+            <div class="intro">
+              Intervention:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Start to log diet using MyFitnessPal.</textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+              Instructions:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention"></textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+              Owner:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+              Follow-up Frequency:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Weekly</textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+              Evaluation question:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+             Follow-up Frequency:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">              </textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+             Evaluation Question:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">              </textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+             Progress Type:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">              </textarea>
+            </div>
+          </div>
+          <div class="intervention-grouper">
+            <div class="intro">
+             Dates:
+            </div>
+            <div class="desc">
+              <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">              </textarea>
+            </div>
+          </div>
+          <!-- Follow-up Frequency needed: 1 every week<br>
+          Question
+          Progress Type: 1-5 scale, Y/N <br>
+          Start date (optional):<br>
+          Target Completion Date:<br> -->
+
+      </div>
+    </div></li>
+
+<!-- var x = $('.secondwrap').offset().top - $('.collapsible.goal-page').offset().top; -->
+<li class="secondwrap">
+  <div class="collapsible-header goals">
+     Exercise 2x/week
+  </div>
+  <div class="collapsible-body">
+    <!-- <div class="assign-cm-button right-link" activates="#assign-cm-message">
+    + assign
+    </div> -->
+    <div class="intervention">
+      <div class="intervention-grouper">
+        <div class="intro">
+          Intervention:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Start to log diet using MyFitnessPal.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Instructions:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention"></textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Owner:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Follow-up Frequency:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Weekly</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Evaluation question:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Follow-up Frequency:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Evaluation Question:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Progress Type:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Dates:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Associated Focus Problems:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 41.6px;">              Improve Diet
+          </textarea>
+        </div>
+      </div>
+      <!-- Follow-up Frequency needed: 1 every week<br>
+      Question
+      Progress Type: 1-5 scale, Y/N <br>
+      Start date (optional):<br>
+      Target Completion Date:<br> -->
+
+  </div>
+</div></li>
+
+
+<li class="secondwrap">
+  <div class="collapsible-header goals">
+     Develop active lifestyle
+  </div>
+  <div class="collapsible-body">
+    <!-- <div class="assign-cm-button right-link" activates="#assign-cm-message">
+    + assign
+    </div> -->
+    <div class="intervention">
+      <div class="intervention-grouper">
+        <div class="intro">
+          Intervention:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Get FitBit to monitor daily steps.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Instructions:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention"></textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Owner:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Follow-up Frequency:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Weekly</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+          Evaluation question:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Follow-up Frequency:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Evaluation Question:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Progress Type:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <div class="intervention-grouper">
+        <div class="intro">
+         Dates:
+        </div>
+        <div class="desc">
+          <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">          </textarea>
+        </div>
+      </div>
+      <!-- Follow-up Frequency needed: 1 every week<br>
+      Question
+      Progress Type: 1-5 scale, Y/N <br>
+      Start date (optional):<br>
+      Target Completion Date:<br> -->
+
+  </div>
+  <div class="intervention">
+    <div class="intervention-grouper">
+      <div class="intro">
+        Intervention:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Get FitBit to monitor daily steps.</textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+        Instructions:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention"></textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+        Owner:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+        Follow-up Frequency:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Weekly</textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+        Evaluation question:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">Me.</textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+       Follow-up Frequency:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">        </textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+       Evaluation Question:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">        </textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+       Progress Type:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">        </textarea>
+      </div>
+    </div>
+    <div class="intervention-grouper">
+      <div class="intro">
+       Dates:
+      </div>
+      <div class="desc">
+        <textarea id="textarea10" class="materialize-textarea intervention" style="height: 20.6px;">        </textarea>
+      </div>
+    </div>
+
+</div></div></li>
+
+
+
+
+</ul>
+
+</div>
+
+
+
+<!-- <div class="select-holder focus">
+  <select multiple class="focus-selector">
+      FOCUS PROBLEMS:
+    <option value="" disabled selected>SELECT FOCUS PROBLEMS, OR ADD NEW</option>
+    <option value="1">Diabetes Type II</option>
+    <option value="2">Obesity</option>
+    <option value="3">Depression</option>
+  </select>
+  <label>Materialize Multiple Select</label>
+</div> -->
+
+
+<!-- <div class="accordion-labels">
+  <div>GOALS TO EDIT:</div>
+    <ul id='dropdown3' data-alignment='right' class='dropdown-content'>
+      <li><a href="#!">Add Category</a></li>
+      <li><a href="#!">Add Note</a></li>
+    </ul>
+    <i class="material-icons note-bar">format_align_center</i>
+    <i class="material-icons note-bar">mode_edit</i>
+    <a class="material-icons note-bar dropdown-button" data-constrainwidth="false" data-alignment='right' data-activates='dropdown3'  >add_box</a>
+</div> -->
+
+<!-- <div class="focus-selector">
+  <div class="focus-header">
+    FOCUS PROBLEMS
+  </div>
+  <div class="focus-checkboxes">
+    <p>
+       <input type="checkbox" id="test5" />
+       <label for="test5">Obesity</label>
+     </p>
+     <p>
+        <input type="checkbox" id="test6" />
+        <label for="test6">Type II Diabetes</label>
+      </p>
+      <p>
+         <input type="checkbox" id="test7" />
+         <label for="test7">Depressions</label>
+       </p>
+  </div>
+  <div class="focus-add-new">
+     ADD NEW
+  </div>
+</div> -->
+
+
+<!-- EDIT CARE PLAN STRUCTURE. TO VIEW CARE PLAN, click on 'PLAN' card on left hand side -->
+
+
+
+
+
+
+
+<!-- <ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header goal">Improve Diet</div>
+    <div class="collapsible-body">
+      <div class="intervention">
+        Instructions: Track caloric intake
+        Owner: Provider/Patient
+        Assessment Domain: Nutrition
+        More-info: this determines
+        Follow-up Frequency needed (optional):
+        Progress Type:
+        Start date (optional):
+        Target Completion Date:
+      </div>
+
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">econd</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+</ul> -->
+</div>
+          <div class="task-type hidden" id="note">
+            <div class="ql-toolbar ql-snow"><span class="ql-formats"><span class="ql-header ql-picker"><span class="ql-picker-label"><svg viewBox="0 0 18 18"> <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon> <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon> </svg></span><span class="ql-picker-options"><span class="ql-picker-item" data-value="1"></span><span class="ql-picker-item" data-value="2"></span><span class="ql-picker-item ql-selected"></span></span></span><select class="ql-header" style="display: none;"><option value="1"></option><option value="2"></option><option selected="selected"></option></select></span><span class="ql-formats"><button type="button" class="ql-bold"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path> <path class="ql-stroke" d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path> </svg></button><button type="button" class="ql-italic"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line> <line class="ql-stroke" x1="5" x2="11" y1="14" y2="14"></line> <line class="ql-stroke" x1="8" x2="10" y1="14" y2="4"></line> </svg></button><button type="button" class="ql-underline"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect> </svg></button></span><span class="ql-formats"><button type="button" class="ql-image"><svg viewBox="0 0 18 18"> <rect class="ql-stroke" height="10" width="12" x="3" y="4"></rect> <circle class="ql-fill" cx="6" cy="7" r="1"></circle> <polyline class="ql-even ql-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline> </svg></button><button type="button" class="ql-code-block"><svg viewBox="0 0 18 18"> <polyline class="ql-even ql-stroke" points="5 7 3 9 5 11"></polyline> <polyline class="ql-even ql-stroke" points="13 7 15 9 13 11"></polyline> <line class="ql-stroke" x1="10" x2="8" y1="5" y2="13"></line> </svg></button></span></div><div id="edit" class="ql-container ql-snow"><div class="ql-editor ql-blank" contenteditable="true" data-placeholder="Enter quick patient notes"><p><br></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div><div class="ql-tooltip ql-hidden"><a class="ql-preview" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div></div>
+            <div class="row"></div>
+            <div class="bottom-row row">
+              <div class="save-button">
+                <i class="material-icons">save</i>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<!--<div class="col s6 cm-section"></div>-->
+<!--
+  <div class="row">
+    <div class="col s12 left-align x-margin-0">
+        </div>
+    </div>
+-->
+<!-- SCRIPTS -->
+    <!-- Libraries -->
+    <!-- <script src="//cdn.quilljs.com/1.1.7/quill.min.js"></script> -->
+    <script src="./Arcadia Analytics_files/d3.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/queue.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/nv.d3.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/topojson.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/jquery-1.10.2.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/jquery.scrollTo.min.js.download"></script>
+    <!-- <script src="js/lib/materialize.min.js"></script> -->
+    <script src="./Arcadia Analytics_files/materializeColors.js.download"></script>
+      <script src="./Arcadia Analytics_files/materialize.min.js.download"></script>
+
+    <script src="./Arcadia Analytics_files/jquery.splitter-0.14.0.js.download"></script>
+    <!-- <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/js/froala_editor.min.js'></script> -->
+    <script src="./Arcadia Analytics_files/quill.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/moment.min.js.download"></script>
+    <script src="./Arcadia Analytics_files/underscore-min.js.download"></script>
+    <script src="./Arcadia Analytics_files/clndr.min.js.download"></script>
+    <!-- Your Scripts Here -->
+    <!-- below to load split HTML files -->
+    <script src="./Arcadia Analytics_files/helpers.js.download"></script>
+    <script src="./Arcadia Analytics_files/home-page-data.js.download"></script>
+    <script src="./Arcadia Analytics_files/patient-summary-data.js.download"></script>
+    <script src="./Arcadia Analytics_files/dashboard-data.js.download"></script>
+    <script src="./Arcadia Analytics_files/draw.js.download"></script>
+
+    <!-- Initialize Page -->
+    <script src="./Arcadia Analytics_files/init.js.download"></script>
+
+
+
+<div class="hiddendiv common" style="font-size: 14.5px; font-family: &quot;Maven Pro&quot;; line-height: 21.75px; width: 575px;">        <br></div><script aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script></body></html>

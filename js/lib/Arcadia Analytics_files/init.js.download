@@ -1,0 +1,69 @@
+
+
+
+// EXAMPLES
+    // JSON data already in a variable
+//        qualityBarsSimple(qualityMeasureData, '#graphHolder1');
+//        qualityBarsNvd3(qualityMeasureData, "#graphHolder1");
+//
+//        $("div.title h3").html(function(d){return d.providers});
+
+    // CSV Data
+//        d3.csv("/data/examples/qualityMeasure.csv", function(error, parsedData){
+//            qualityBarsSimple(parsedData, '#graphHolder1');
+//        });
+
+draw();
+d3.selectAll(".main").each(function(d,i){
+    var thisMain = d3.select(this);
+    thisMain.classed("main-"+i, true);
+    if (i==0){thisMain.classed("hidden",false)} else {thisMain.classed("hidden",true)}
+});
+var thisMainI = 0;
+
+function nextMain(i) {
+    thisMainI = thisMainI+i;
+    if (thisMainI<0) {thisMainI = d3.selectAll(".main")[0].length-1}
+    if (thisMainI>d3.selectAll(".main")[0].length-1) {thisMainI=0}
+    d3.selectAll(".main").classed("hidden",true);
+    d3.selectAll(".main-"+thisMainI).classed("hidden",false);
+}
+
+
+nextMain(1);
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+            nextMain(-1);
+            break;
+
+        case 38: // up
+            nextMain(-1);
+            break;
+
+        case 39: // right
+            nextMain(1);
+            break;
+
+        case 40: // down
+            nextMain(1);
+            break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+// ON PAGE LOAD
+(function($){
+    $(function(){
+        // put any scripts to execute after the document is ready
+        $('.tooltipped').tooltip({delay: 50});
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space

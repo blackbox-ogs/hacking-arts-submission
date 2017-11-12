@@ -1,0 +1,1586 @@
+/**
+ * Created by Nick on 9/14/2016.
+ */
+
+//var chartSections = [
+//    "Patient Context",
+//    "Quality Gaps",
+//    "Conditions",
+//    "Utilization History",
+//    "Appointments",
+//    "Medications",
+//    "Problem List",
+//    "Demographics",
+//    "Attribution",
+//    "Outreach",
+//    "Preventive",
+//    "Asthma",
+//    "CHF",
+//    "CVD",
+//    "Diabetes",
+//    "Hypertension"
+//];
+
+var chartSections = [
+
+    {name: "Context", selector: "#patient-context"
+    , data :
+          [{
+           "Current Care Manager": "d Talib",
+           "Care Mgmt Status": "Enrolled",
+           "Next Appt":"12/19/2016  w/ Carrillo, Silvia",
+           "Last Visit":"09/19/2016 w/ Carrillo, Silvia",
+           "Follow Up":null,
+           "pMPM":4271,
+           "risk":"4.6 (HCC)",
+           "payerPlan":"NW Health - Facets",
+           "payerClinical":null,
+           "Inpatient Hospital":"12/25/2015 (Cerebral infarction, unspecified)"
+
+          }]
+    },
+    {name: "Demographics", selector: "#demographics",
+       "data":[
+       {
+          "name":"Martinez, Juana ",
+          "born":"1932-04-13",
+          "age":84,
+          "sex":"F",
+          "language":"Spanish",
+          "race":"Needs Update",
+          "ethnicity":"Hispanic or Latino",
+          "address1":"1519 ROSEDALE AVENUE",
+          "city":"New York",
+          "state":"NY",
+          "zip":"10460",
+          "phoneNumber":"717-555-9532",
+          "email":"Juana.Martinez@ymail.com",
+          "PMPM":4271,
+          "payer":"Commercial #6628 (Family Health (eCW)), Commercial #10720 (Family Health (eCW)), Commercial #12025 (Family Health (eCW))",
+          "MRN":"34097548 (Family Health (eCW))"
+       }
+    ]},
+      {name: "Care Team", selector: "#care-team",
+      data: [{
+        "Care Manager": "",
+        "Pharmacist": "",
+        "Functional PCP": "",
+        "Clinical PCP": "",
+        "Family": ""
+      }]
+    },
+    {name: "Interventions", selector: "#interventions"},
+    {name: "Notes", selector: "#notes"},
+    {name: "Quality Gaps", selector: "#quality-gaps"
+    , "data":[
+      {
+         "name":"Albumin Creatinine Ratio",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"Allergy List",
+         "date":"05/29/2015",
+         "value":"Active Allergy",
+         "source":"Family Health (eCW)",
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"BMI",
+         "date":"11/13/2015",
+         "value":"34.8",
+         "source":"Family Health (eCW)",
+         "location":"Kingdom Hospital",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Colonoscopy",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"Depression Screen",
+         "date":"08/16/2015",
+         "value":"Completed on 05/22/2015",
+         "source":"Family Health (eCW)",
+         "location":"Kingdom Hospital",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Dialysis",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"Fall Risk",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"Flu Vacc",
+         "date":"12/01/2014",
+         "value":null,
+         "source":"Family Health (eCW)",
+         "location":"Kingdom Hospital",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Glomerular Filtration Rate",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"HDL",
+         "date":"01/18/2014",
+         "value":"74.0",
+         "source":"Family Health (eCW)",
+         "location":"Generic Facility #277899731",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"LDL",
+         "date":"01/18/2014",
+         "value":"79.0",
+         "source":"Family Health (eCW)",
+         "location":"Generic Facility #277899731",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Mammogram",
+         "date":"11/18/2011",
+         "value":null,
+         "source":"Family Health (eCW)",
+         "location":"Kingdom Hospital",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Med List",
+         "date":"09/14/2015",
+         "value":"Active Medication",
+         "source":"Family Health (eCW)",
+         "location":"Kingdom Hospital",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Nephrologist Visit",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"PAP Result",
+         "date":null,
+         "value":null,
+         "source":null,
+         "location":null,
+         "provider":null
+      },
+      {
+         "name":"Triglycerides",
+         "date":"01/18/2014",
+         "value":"72.0",
+         "source":"Family Health (eCW)",
+         "location":"Generic Facility #277899731",
+         "provider":"Carrillo, Silvia"
+      },
+      {
+         "name":"Urine Protein",
+         "date":"01/18/2014",
+         "value":null,
+         "source":"Family Health (eCW)",
+         "location":"Generic Facility #277899731",
+         "provider":"Carrillo, Silvia"
+      }
+   ]},
+   {name: "Care Gaps", selector:"#care-gaps"},
+    {name: "Vitals", selector: "#chf"},
+    {name: "Conditions", selector: "#conditions"
+    ,"data":[ {
+      "riskDescription":"Cardio-Respiratory Failure and Shock",
+      "category":"Arrest",
+      "source":"Historical Claim",
+      "relatedClaimDt":"2015-08-26",
+      "gap":"Y",
+      "sourceDateDt":"2015-08-26",
+      "dxCode":"518.83",
+      "dxDescription":"Chronic respiratory failure",
+      "renderingProvider":"Fox, Summer",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"84",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Hemiplegia/Hemiparesis",
+      "category":"Cerebrovascular Disease",
+      "source":"Historical Claim",
+      "relatedClaimDt":"2015-12-03",
+      "gap":"Y",
+      "sourceDateDt":"2015-12-03",
+      "dxCode":"G81.91",
+      "dxDescription":"Hemiplegia, unspecified affecting right dominant side        ",
+      "renderingProvider":"Powell, Barbara",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"103",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Ischemic or Unspecified Stroke",
+      "category":"Cerebrovascular Disease",
+      "source":"Historical Claim",
+      "relatedClaimDt":"2015-12-27",
+      "gap":"Y",
+      "sourceDateDt":"2015-12-27",
+      "dxCode":"I63.9",
+      "dxDescription":"Cerebral infarction, unspecified                             ",
+      "renderingProvider":"Herrera, Uriel",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"100",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Acute Myocardial Infarction",
+      "category":"Heart",
+      "source":"Historical Claim",
+      "relatedClaimDt":"2015-03-10",
+      "gap":"Y",
+      "sourceDateDt":"2015-03-10",
+      "dxCode":"410.71",
+      "dxDescription":"Subendocardial infarction, initial episode of care",
+      "renderingProvider":"Thompson, Peter",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"86",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Unstable Angina and Other Acute Ischemic Heart Disease",
+      "category":"Heart",
+      "source":"Historical Claim",
+      "relatedClaimDt":"2015-08-04",
+      "gap":"Y",
+      "sourceDateDt":"2015-08-04",
+      "dxCode":"410.90",
+      "dxDescription":"Acute myocardial infarction of unspecified site, episode of care unspecified",
+      "renderingProvider":"Morgan, Melinda",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"87",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Major Depressive, Bipolar, and Paranoid Disorders",
+      "category":"Psychiatric",
+      "source":"Medication List / Prescriptions",
+      "relatedClaimDt":null,
+      "gap":"Y",
+      "sourceDateDt":"2015-11-13",
+      "dxCode":"Seroquel 25 mg tablet",
+      "dxDescription":null,
+      "renderingProvider":"Carrillo, Silvia",
+      "facility":"Generic Facility #277899731",
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"58",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Vascular Disease with Complications",
+      "category":"Vascular",
+      "source":"Problem List",
+      "relatedClaimDt":"2015-09-20",
+      "gap":"Y",
+      "sourceDateDt":"2012-08-17",
+      "dxCode":"441.00",
+      "dxDescription":"Dissection of aorta, unspecified site",
+      "renderingProvider":"Tran, Earl",
+      "facility":null,
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"107",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Congestive Heart Failure",
+      "category":"Heart",
+      "source":"Current Assessment",
+      "relatedClaimDt":"2015-09-30",
+      "gap":"N",
+      "sourceDateDt":"2016-09-11",
+      "dxCode":"428.0",
+      "dxDescription":"Congestive heart failure, unspecified",
+      "renderingProvider":"Carrillo, Silvia",
+      "facility":"Kingdom Hospital",
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"85",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Specified Heart Arrhythmias",
+      "category":"Heart",
+      "source":"Current Assessment",
+      "relatedClaimDt":"2015-12-27",
+      "gap":"N",
+      "sourceDateDt":"2016-09-19",
+      "dxCode":"427.31",
+      "dxDescription":"Atrial fibrillation",
+      "renderingProvider":"Carrillo, Silvia",
+      "facility":"Kingdom Hospital",
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"96",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Chronic Obstructive Pulmonary Disease",
+      "category":"Lung",
+      "source":"Current Assessment",
+      "relatedClaimDt":"2015-12-27",
+      "gap":"N",
+      "sourceDateDt":"2016-09-19",
+      "dxCode":"496",
+      "dxDescription":"Chronic airway obstruction, not elsewhere classified",
+      "renderingProvider":"Carrillo, Silvia",
+      "facility":"Kingdom Hospital",
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"111",
+      "riskAlgId":55
+   },
+   {
+      "riskDescription":"Morbid Obesity",
+      "category":"Metabolic",
+      "source":"Current Assessment",
+      "relatedClaimDt":null,
+      "gap":"N",
+      "sourceDateDt":"2016-09-19",
+      "dxCode":"278.01",
+      "dxDescription":"Morbid obesity",
+      "renderingProvider":"Carrillo, Silvia",
+      "facility":"Kingdom Hospital",
+      "dismissedUser":null,
+      "dismissedReason":null,
+      "dismissedAt":null,
+      "dismissedId":null,
+      "groupId":"22",
+      "riskAlgId":55
+   }
+]},
+    {name: "Utilization", selector: "#utilization-history"
+    , "data":[
+      {
+         "dateDt":"2016-12-01",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-11-25",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-11-17",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-10-24",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-10-09",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Gretch, Nick"
+      },
+      {
+         "dateDt":"2016-10-04",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-09-19",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-09-11",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-08-30",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Gretch, Nick"
+      },
+      {
+         "dateDt":"2016-08-11",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-08-01",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-07-14",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2016-06-23",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Reyes, Alicia"
+      },
+      {
+         "dateDt":"2015-12-27",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Herrera, Uriel"
+      },
+      {
+         "dateDt":"2015-12-25",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Burson, Amanda"
+      },
+      {
+         "dateDt":"2015-12-23",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Burson, Amanda"
+      },
+      {
+         "dateDt":"2015-12-18",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Adams, Amy"
+      },
+      {
+         "dateDt":"2015-12-18",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Burson, Amanda"
+      },
+      {
+         "dateDt":"2015-12-14",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Chart Update",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-12-12",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Burson, Amanda"
+      },
+      {
+         "dateDt":"2015-12-11",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Burson, Amanda"
+      },
+      {
+         "dateDt":"2015-12-09",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Chart Update",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-12-08",
+         "dxCode":"I63.412",
+         "dxDesc":"Cereb infrc due to embolism of left middle cerebral artery   ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Price, Mason"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"G81.91",
+         "dxDesc":"Hemiplegia, unspecified affecting right dominant side        ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Powell, Barbara"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I50.9",
+         "dxDesc":"Heart failure, unspecified                                   ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Kim, Joy"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Ambulance - Land",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Estelle, Janice"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Emergency Room - Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Morgan, Melinda"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Emergency Room - Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Stevens, Noah"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Inpatient Hospital",
+         "visitTypeInd":1,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Roberts, Ian"
+      },
+      {
+         "dateDt":"2015-12-03",
+         "dxCode":"I63.9",
+         "dxDesc":"Cerebral infarction, unspecified                             ",
+         "facility":null,
+         "visitType":"Outpatient Hospital",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Kaur, Chloe"
+      },
+      {
+         "dateDt":"2015-11-27",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-11-23",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-11-13",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-11-13",
+         "dxCode":"J44.1",
+         "dxDesc":"Chronic obstructive pulmonary disease w (acute) exacerbation ",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-11-07",
+         "dxCode":"J44.1",
+         "dxDesc":"Chronic obstructive pulmonary disease w (acute) exacerbation ",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-11-01",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Independent Laboratory",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Sanchez, Marisol"
+      },
+      {
+         "dateDt":"2015-11-01",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-29",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-20",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-19",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Coumadin Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-19",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-13",
+         "dxCode":"434.91",
+         "dxDesc":"Cerebral artery occlusion, unspecified with cerebral infarction",
+         "facility":null,
+         "visitType":"Home",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Homan, Jennifer"
+      },
+      {
+         "dateDt":"2015-10-08",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Independent Laboratory",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Sanchez, Marisol"
+      },
+      {
+         "dateDt":"2015-10-08",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-06",
+         "dxCode":"496",
+         "dxDesc":"Chronic airway obstruction, not elsewhere classified",
+         "facility":null,
+         "visitType":"Home",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"David, Oliver"
+      },
+      {
+         "dateDt":"2015-10-04",
+         "dxCode":null,
+         "dxDesc":"Unknown",
+         "facility":"Kingdom Hospital",
+         "visitType":"Office Visit",
+         "visitTypeInd":0,
+         "source":"Family Health (eCW)",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-10-03",
+         "dxCode":"434.91",
+         "dxDesc":"Cerebral artery occlusion, unspecified with cerebral infarction",
+         "facility":null,
+         "visitType":"Home",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Homan, Jennifer"
+      },
+      {
+         "dateDt":"2015-09-30",
+         "dxCode":"427.31",
+         "dxDesc":"Atrial fibrillation",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-09-29",
+         "dxCode":"428.30",
+         "dxDesc":"Diastolic heart failure, unspecified",
+         "facility":null,
+         "visitType":"Office",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Carrillo, Silvia"
+      },
+      {
+         "dateDt":"2015-09-27",
+         "dxCode":"434.91",
+         "dxDesc":"Cerebral artery occlusion, unspecified with cerebral infarction",
+         "facility":null,
+         "visitType":"Home",
+         "visitTypeInd":0,
+         "source":"NW Health - Facets",
+         "renderingProvider":"Homan, Jennifer"
+      }
+   ]
+},
+    {name: "Appointments", selector: "#appointments"
+
+,"data":[
+   {
+      "date":"2016-12-19",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2016-12-23",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-01-04",
+      "location":"Kingdom Hospital",
+      "provider":"Gretch, Nick",
+      "time":null,
+      "specialty":"Physician Assistant"
+   },
+   {
+      "date":"2017-01-09",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-01-25",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-02-02",
+      "location":"Kingdom Hospital",
+      "provider":"Gretch, Nick",
+      "time":null,
+      "specialty":"Physician Assistant"
+   },
+   {
+      "date":"2017-02-10",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-03-28",
+      "location":"St. Garfield's Hospital",
+      "provider":"Hart, Sheri",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-04-01",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-05-10",
+      "location":"East Valley Medical Clinic",
+      "provider":"Ward, Ruth",
+      "time":null,
+      "specialty":"Physician Assistant"
+   },
+   {
+      "date":"2017-05-15",
+      "location":"East Valley Medical Clinic",
+      "provider":"Ward, Ruth",
+      "time":null,
+      "specialty":"Physician Assistant"
+   },
+   {
+      "date":"2017-07-20",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-08-05",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-08-31",
+      "location":"Kingdom Hospital",
+      "provider":"Koonkhuntod, Dru",
+      "time":null,
+      "specialty":"Other"
+   },
+   {
+      "date":"2017-09-20",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-10-04",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-10-19",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-10-20",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-10-29",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-11-13",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-11-23",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-11-27",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   },
+   {
+      "date":"2017-12-20",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia",
+      "time":null,
+      "specialty":"Family Practice"
+   }
+]  },
+    {name: "Medications", selector: "#medications"
+
+,"data":[
+   {
+      "medicationName":"potassium chloride ER 10 mEq capsule,extended release",
+      "rxDateDt":"2015-10-03",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"diltiazem ER 240 mg capsule,extended release",
+      "rxDateDt":"2015-08-30",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"atorvastatin 40 mg tablet",
+      "rxDateDt":"2015-08-14",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Tirosint 88 mcg capsule",
+      "rxDateDt":"2015-08-09",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Spiriva with HandiHaler 18 mcg \u0026 inhalation capsules",
+      "rxDateDt":"2015-06-13",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"pantoprazole 40 mg tablet,delayed release",
+      "rxDateDt":"2015-05-28",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Tirosint 100 mcg capsule",
+      "rxDateDt":"2015-05-27",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"digoxin 125 mcg tablet",
+      "rxDateDt":"2015-05-18",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Seroquel 25 mg tablet",
+      "rxDateDt":"2015-05-13",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"levalbuterol 1.25 mg/3 mL solution for nebulization",
+      "rxDateDt":"2015-05-07",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"ketotifen 0.025 % eye drops",
+      "rxDateDt":"2015-04-16",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"furosemide 40 mg tablet",
+      "rxDateDt":"2015-01-04",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Miralax 17 gram/dose oral powder",
+      "rxDateDt":"2014-11-02",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"albuterol sulfate 2.5 mg/0.5 mL solution for nebulization",
+      "rxDateDt":"2014-03-21",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"Brovana 15 mcg/2 mL Neb Solution",
+      "rxDateDt":"2013-05-29",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"gloves, latex with aloe vera",
+      "rxDateDt":"2013-05-22",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"budesonide 1 mg/2 mL Neb Suspension",
+      "rxDateDt":"2013-05-05",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "medicationName":"losartan 25 mg tablet",
+      "rxDateDt":null,
+      "source":"Family Health (eCW)"
+   }
+]
+
+    },
+    {name: "Problem List", selector: "#problem-list"
+
+,"data":[
+   {
+      "addedDt":"2015-12-13",
+      "dxCode":"496",
+      "description":"Chronic airway obstruction, not elsewhere classified",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-11-19",
+      "dxCode":"553.8",
+      "description":"Hernia of other specified sites without mention of obstruction or gangrene",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-10-20",
+      "dxCode":"V12.54",
+      "description":"Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-09-30",
+      "dxCode":"424.1",
+      "description":"Aortic valve disorders",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-09-22",
+      "dxCode":"401.9",
+      "description":"Unspecified essential hypertension",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-09-13",
+      "dxCode":"429.3",
+      "description":"Cardiomegaly",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-08-13",
+      "dxCode":"244.9",
+      "description":"Unspecified hypothyroidism",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-05-21",
+      "dxCode":"428.30",
+      "description":"Unspecified diastolic heart failure",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-02-28",
+      "dxCode":"427.31",
+      "description":"Atrial fibrillation",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2015-01-22",
+      "dxCode":"585.3",
+      "description":"Chronic kidney disease, Stage III (moderate)",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2013-08-05",
+      "dxCode":null,
+      "description":null,
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2013-02-03",
+      "dxCode":"535.50",
+      "description":"Gastritis, unspec. w/o hemorrhage",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2012-08-17",
+      "dxCode":"441.00",
+      "description":"Intramural aortic hematoma",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2012-05-04",
+      "dxCode":"585.3",
+      "description":"Chronic kidney disease (CKD), stage III (moderate)",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2012-02-27",
+      "dxCode":"278.00",
+      "description":"Obesity",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2011-10-29",
+      "dxCode":"427.31",
+      "description":"Paroxysmal atrial fibrillation",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-12-20",
+      "dxCode":"241.1",
+      "description":"Goiter, nontoxic multinodular",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-12-08",
+      "dxCode":"429.3",
+      "description":"Cardiomegaly",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-09-07",
+      "dxCode":"733.00",
+      "description":"Generalized osteoporosis moderate-severe",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-08-21",
+      "dxCode":"401.9",
+      "description":"Hypertension, unspec.",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-08-03",
+      "dxCode":"727.3",
+      "description":"Subcromial bursitis right shoulder",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-05-20",
+      "dxCode":"396.3",
+      "description":"Aortic insufficiency, mild",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-05-16",
+      "dxCode":"496",
+      "description":"COPD, NOS",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-05-15",
+      "dxCode":"472.0",
+      "description":"Rhinitis, chronic",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-03-03",
+      "dxCode":"354.0",
+      "description":"Carpal tunnel syndrome right wrist",
+      "source":"Family Health (eCW)"
+   },
+   {
+      "addedDt":"2010-02-18",
+      "dxCode":"493.92",
+      "description":"Asthma, unspec. w/ acute exacerbation",
+      "source":"Family Health (eCW)"
+   }
+]
+
+    },
+    {name: "Preventive", selector: "#preventive"
+    ,"data":[
+   {
+      "name":"Med List",
+      "date":"09/14/2015",
+      "value":"Active Medication",
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Allergy List",
+      "date":"05/29/2015",
+      "value":"Active Allergy",
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Med Rec",
+      "date":"11/27/2015",
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Barrios Santiago, Guillermo"
+   },
+   {
+      "name":"BMI",
+      "date":"11/13/2015",
+      "value":"34.8",
+      "dateInd":0,
+      "valueInd":1,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Colonoscopy",
+      "date":null,
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Fall Risk",
+      "date":null,
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Depression Screen",
+      "date":"08/16/2015",
+      "value":"Completed on 05/22/2015",
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Flu Vacc",
+      "date":"12/01/2014",
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Physical Exam",
+      "date":"10/05/2011",
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":"NW Health - Facets",
+      "location":null,
+      "provider":"Ashmore, Jeffrey"
+   },
+   {
+      "name":"Tobacco Status",
+      "date":"11/27/2015",
+      "value":"no/never",
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Tobacco Cessation",
+      "date":null,
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Pneumo Vacc",
+      "date":"01/28/2014",
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Gretch, Nick"
+   },
+   {
+      "name":"Mammogram",
+      "date":"11/18/2011",
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"PAP Result",
+      "date":null,
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"High Risk Medication",
+      "date":null,
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Osteoporosis Screen",
+      "date":"12/24/2012",
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":"NW Health - Facets",
+      "location":null,
+      "provider":"McGaa, Jasmine"
+   },
+   {
+      "name":"BP",
+      "date":"11/27/2015",
+      "value":"108/69",
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   }
+]
+    },
+    {name: "Asthma", selector: "#asthma","data":[
+   {
+      "name":"Control Med",
+      "date":null,
+      "value":null,
+      "dateInd":0,
+      "valueInd":0,
+      "source":null,
+      "location":null,
+      "provider":null
+   },
+   {
+      "name":"Rescue Med",
+      "date":"Active",
+      "value":"levalbuterol 1.25 mg/3 mL solution for nebulizatio",
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Tobacco Status",
+      "date":"11/27/2015",
+      "value":"no/never",
+      "dateInd":0,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Depression Screen",
+      "date":"08/16/2015",
+      "value":"Completed on 05/22/2015",
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"Flu Vacc",
+      "date":"12/01/2014",
+      "value":null,
+      "dateInd":1,
+      "valueInd":0,
+      "source":"Family Health (eCW)",
+      "location":"Kingdom Hospital",
+      "provider":"Carrillo, Silvia"
+   },
+   {
+      "name":"BP",
+      "date":null,
+      "value":null,
+      "dateInd":null,
+      "valueInd":null,
+      "source":null,
+      "location":null,
+      "provider":null
+   }
+]
+},
+
+];
+
+console.log(chartSections);
+
+var patientTasksData = [{"date":"9/20/2016 16:00","title":"Phone Call","user":"You","text":"Weekly check-in. Ask about the neighborhood walking group."},
+    {"date":"9/25/2016 13:00","title":"Family Touchpoint","user":"Maria Johnson","text":"Call brother (John) about issues at the apartment."},
+    {"date":"9/30/2016 16:00","title":"Pharmacist Check-In","user":"You","text":""}];
