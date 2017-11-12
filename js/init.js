@@ -9,15 +9,19 @@
         function stateChecker(){
            if (state=='say'){
             $('.state').hide();
-            $('.state.say').show();
+            $('.state.say').fadeIn(300);
+          }
+          else if (state=='home'){
+            $('.state').hide();
+            $('.state.home').fadeIn(300);
           }
           else if (state=='explore'){
             $('.state').hide();
-            $('.state.explore').show();
+            $('.state.explore').fadeIn(300);
           }
           else if (state=='recording'){
             $('.state').hide();
-            $('.state.recording').show();
+            $('.state.recording').fadeIn(300);
           }
           else if (state=='submission'){
             $('.state').hide();
@@ -25,7 +29,7 @@
           }
           else if (state=='listen'){
             $('.state').hide();
-            $('.state.listen').show();
+            $('.state.listen').fadeIn(300);
           }
         };
 
@@ -53,19 +57,25 @@
           stateChecker();
         });
 
+        $('.cancel-btn').on('click',function(){
+          state = 'say';
+          stateChecker();
+        });
+
 
         //INSERT FUNCTION TO PAUSE
         $('.playback.pause').on('click', function(){
-          $(this).removeClass('pause').addClass('resume');
-          $('.playback-text').html('<i class="material-icons middle-icon">play_arrow</i>resume');
+          console.log('how');
+          if ($(this).hasClass('pause')){
+            $(this).removeClass('pause').addClass('resume');
+            $('.playback-text').html('<i class="material-icons middle-icon">play_arrow</i>resume');
+          } else if ($(this).hasClass('resume')){
+            $(this).removeClass('resume').addClass('pause');
+            $('.playback-text').html('<i class="material-icons middle-icon">pause</i>pause');
+          }
         });
 
-       //INSERT FUNCTION TO RESUME
-        $('.playback.resume').on('click', function(){
-          console.log('yooyooy');
-          $(this).removeClass('resume').addClass('pause');
-          $('.playback-text').html('<i class="material-icons middle-icon">pause</i>pause');
-        });
+
 
 
     }); // end of document ready
