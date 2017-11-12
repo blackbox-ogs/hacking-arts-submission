@@ -61,6 +61,10 @@
         $('.state').hide();
         $('.state.listen').fadeIn(300);
       }
+      else if (state === 'final') {
+        $('.state').hide();
+        $('.state.final').fadeIn(300);
+      }
     };
 
     //STATE CHANGE TRIGGER
@@ -94,7 +98,7 @@
       mediaRecorder.stop();
       console.log(mediaRecorder.state);
       playATrack();
-      state = 'listen';
+      state = 'final';
       stateChecker();
     });
 
