@@ -1,8 +1,5 @@
 // ON PAGE LOAD
 (function ($) {
-
-  let clock;
-
   let mediaRecorder;
   navigator.mediaDevices.getUserMedia({audio: true})
   .then(function (stream) {
@@ -26,7 +23,7 @@
 
   $(function () {
 
-    var state = 'home';
+    let state = 'home';
 
     // play a track from s3
     function playATrack() {
